@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block micontenido %}
+    <h2>Mi Colección de Discos</h2>
+    <a href="/agregar"><button>+ Agregar Disco</button></a>
+    <br><br>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Artista / Banda</th>
+                <th>Álbum</th>
+                <th>Género</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for disco in discos %}
+            <tr>
+                <td>{{ disco.artista }}</td>
+                <td>{{ disco.album }}</td>
+                <td>{{ disco.genero }}</td>
+                <td>
+                    <a href="/editar/{{ disco._id }}">Editar</a> | 
+                    <a href="/eliminar/{{ disco._id }}" onclick="return confirm('¿Seguro que quieres borrar este disco?')">Eliminar</a>
+                </td>
+            </tr>
+            {% else %}
+            <tr>
+                <td colspan="4">No hay música registrada todavía. ¡Agrega tu primer disco!</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

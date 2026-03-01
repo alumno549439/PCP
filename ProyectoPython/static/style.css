@@ -1,0 +1,106 @@
+/* Importamos una fuente moderna de Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f8ff; /* Un tono AliceBlue súper suave para el fondo entero */
+    margin: 0;
+    color: #333;
+}
+
+header {
+    background-color: #AEC6CF; /* ¡Aquí está tu azul pastel! */
+    color: #2C3E50; /* Texto oscuro para que resalte bien sobre el pastel */
+    padding: 1.5rem 0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-weight: 600;
+}
+
+main {
+    max-width: 900px;
+    margin: 2rem auto;
+    background: white;
+    padding: 2.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+/* Estilos de botones */
+button, input[type="submit"] {
+    background-color: #2C3E50; /* Azul oscuro elegante para el botón */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
+}
+
+button:hover, input[type="submit"]:hover {
+    background-color: #AEC6CF; /* Al pasar el ratón se pone azul pastel */
+    color: #2C3E50;
+}
+
+/* Estilos de enlaces */
+a {
+    color: #5B8A9E; /* Un azul intermedio para los links de editar/eliminar */
+    text-decoration: none;
+    font-weight: 600;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #2C3E50;
+}
+
+/* Estilos de la tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1.5rem;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f4f9f9; /* Un fondo gris-azulado muy clarito para las cabeceras */
+    color: #555;
+}
+
+tr:hover {
+    background-color: #eaf2f6; /* Hover azulado suave al pasar el ratón por las filas */
+}
+
+/* Estilos del formulario */
+form p {
+    margin-bottom: 1.5rem;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+footer {
+    text-align: center;
+    margin-top: 3rem;
+    padding: 1rem;
+    color: #777;
+    font-size: 0.9rem;
+}

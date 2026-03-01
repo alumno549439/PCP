@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block micontenido %}
+    <h2>{{ accion }} Disco</h2>
+    
+    <form method="POST" action="">
+        {{ form.hidden_tag() }}
+        
+        <p>
+            {{ form.artista.label }}<br>
+            {{ form.artista(size=30) }}
+        </p>
+        <p>
+            {{ form.album.label }}<br>
+            {{ form.album(size=30) }}
+        </p>
+        <p>
+            {{ form.genero.label }}<br>
+            {{ form.genero(size=30) }}
+        </p>
+        <p>
+            {{ form.submit() }}
+        </p>
+    </form>
+    
+    <br>
+    <a href="/">Volver a la lista</a>
+{% endblock %}
