@@ -1,35 +1,41 @@
 {% extends "base.html" %}
 
 {% block micontenido %}
-    <h2>Mi Colección de Discos</h2>
-    <a href="/agregar"><button>+ Agregar Disco</button></a>
-    <br><br>
+    <div class="flex justify-between items-center mb-6">
+        <h2 class="text-2xl font-semibold text-slate-700">Mi Colección de Discos</h2>
+        <a href="/agregar" class="bg-slate-800 text-white px-4 py-2 rounded-md hover:bg-[#AEC6CF] hover:text-slate-800 transition-colors duration-300 font-medium shadow-sm">
+            + Agregar Disco
+        </a>
+    </div>
 
-    <table border="1">
-        <thead>
-            <tr>
-                <th>Artista / Banda</th>
-                <th>Álbum</th>
-                <th>Género</th>
-                <th>Acciones</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for disco in discos %}
-            <tr>
-                <td>{{ disco.artista }}</td>
-                <td>{{ disco.album }}</td>
-                <td>{{ disco.genero }}</td>
-                <td>
-                    <a href="/editar/{{ disco._id }}">Editar</a> | 
-                    <a href="/eliminar/{{ disco._id }}" onclick="return confirm('¿Seguro que quieres borrar este disco?')">Eliminar</a>
-                </td>
-            </tr>
-            {% else %}
-            <tr>
-                <td colspan="4">No hay música registrada todavía. ¡Agrega tu primer disco!</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+    <div class="overflow-x-auto rounded-lg border border-slate-200">
+        <table class="min-w-full bg-white border-collapse text-left">
+            <thead class="bg-slate-100 text-slate-600 border-b border-slate-200">
+                <tr>
+                    <th class="py-3 px-4 font-semibold">Artista / Banda</th>
+                    <th class="py-3 px-4 font-semibold">Álbum</th>
+                    <th class="py-3 px-4 font-semibold">Género</th>
+                    <th class="py-3 px-4 font-semibold text-center">Acciones</th>
+                </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100 text-slate-700">
+                {% for disco in discos %}
+                <tr class="hover:bg-slate-50 transition-colors">
+                    <td class="py-3 px-4">{{ disco.artista }}</td>
+                    <td class="py-3 px-4">{{ disco.album }}</td>
+                    <td class="py-3 px-4">{{ disco.genero }}</td>
+                    <td class="py-3 px-4 text-center space-x-2">
+                        <a href="/editar/{{ disco._id }}" class="text-[#5B8A9E] font-medium hover:text-slate-800 hover:underline">Editar</a> 
+                        <span class="text-slate-300">|</span> 
+                        <a href="/eliminar/{{ disco._id }}" onclick="return confirm('¿Seguro que quieres borrar este disco?')" class="text-red-500 font-medium hover:text-red-700 hover:underline">Eliminar</a>
+                    </td>
+                </tr>
+                {% else %}
+                <tr>
+                    <td colspan="4" class="py-8 text-center text-slate-500 italic">No hay música registrada todavía. ¡Agrega tu primer disco!</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
 {% endblock %}
